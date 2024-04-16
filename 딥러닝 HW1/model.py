@@ -69,7 +69,6 @@ class LeNet5_advance(nn.Module):
         img = img.view(img.size(0), -1)
         img = self.fc1(img)
         img = self.active(img)
-        # img = self.dropout(img)
 
         img = self.fc2(img)
         img = self.active(img)
