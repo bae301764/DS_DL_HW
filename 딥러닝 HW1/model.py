@@ -52,7 +52,6 @@ class LeNet5_advance(nn.Module):
         self.fc2 = nn.Linear(120, 84)
         self.fc3 = nn.Linear(84, 10)
         self.active = nn.Tanh()
-        self.dropout = nn.Dropout(0.5)
         
 
     def forward(self, img):
