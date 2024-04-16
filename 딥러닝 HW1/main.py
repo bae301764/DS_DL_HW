@@ -107,13 +107,11 @@ def main():
     test_data_dir = '/home/iai3/Desktop/jeongwon/2024 딥러닝 과제/mnist-classification/data/test'
 
     train_set = MNIST(train_data_dir)
-    train_set_advance = MNIST(train_data_dir)
     test_set = MNIST(test_data_dir)
     
     # 2) DataLoaders for training and test
     batch_size = 512
     train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=16)
-    train_loader_advance = DataLoader(train_set_advance, batch_size=batch_size, shuffle=True, num_workers=16)
     test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=16)
 
     # 3) model
@@ -165,7 +163,7 @@ def main():
     print('----- Training LeNet-Advance')
     for _ in tqdm(range(epochs)):
         # Train
-        train_loss_advance, train_accuracy_advance = train(Lenet_advance, train_loader_advance, device, loss_advance, optimizer_advance)
+        train_loss_advance, train_accuracy_advance = train(Lenet_advance, train_loader, device, loss_advance, optimizer_advance)
         train_loss_list_advance.append(train_loss_advance)
         train_accuracy_list_advance.append(train_accuracy_advance)
         # Test
@@ -215,7 +213,7 @@ def main():
     axe[1,1].text(len(test_accuracy_list_mlp), 0.5, f'MLP: {test_accuracy_list_mlp[-1]:.4f}', ha='right', va='bottom')
 
     fig.tight_layout()
-    fig.savefig('./loss and accuracy plot.png')
+    fig.savefig('./loss and accuracy plot2.png')
 
 
 if __name__ == '__main__':
