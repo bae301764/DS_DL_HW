@@ -18,8 +18,8 @@
 - LeNet-5가 CustomMLP에 비해 성능이 우수함
 
 ### LeNet-5 와 Regularization이 추가된 모델(LeNet Advance)
-- LeNet-5의 첫 번째와 두 번째 Convolution 단계에 Batch Normalization를 추가\
-- L2 regularization인 weight decay를 추가\
+- LeNet-5의 첫 번째와 두 번째 Convolution 단계에 Batch Normalization를 추가
+- L2 regularization인 weight decay를 추가
 - Regularization을 사용함으로써 일반화 성능이 향상되었음을 확인
 
 
